@@ -24,29 +24,37 @@
     <div class="game-area">
         <!--Buttons-->
         <div class="controls-area">
-            <button class="btn btn-big btn-green">
-                <i class="fa-solid fa-plus" title="Use Addition" aria-hidden="true"></i>
+            <button data-type="addition" class="btn btn-big btn-green">
+                <i class="fa-solid fa-plus" aria-hidden="true"></i>
             </button>
-            <button class="btn btn-big btn-blue">
-                <i class="fa-solid fa-minus" title="Use Addition" aria-hidden="true"></i>
+            <button data-type="subtract" class="btn btn-big btn-blue">
+                <i class="fa-solid fa-minus" aria-hidden="true"></i>
             </button>
-            <button class="btn btn-big btn-orange">
-                <i class="fa-solid fa-xmark" title="Use Addition" aria-hidden="true"></i>
+            <button data-type="multiply" class="btn btn-big btn-orange">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
             </button>
-            <button class="btn btn-big btn-red">
-                <i class="fa-solid fa-divide" title="Use Addition" aria-hidden="true"></i>
+            <button data-type="division" class="btn btn-big btn-red">
+                <i class="fa-solid fa-divide" aria-hidden="true"></i>
             </button>
         </div>
         <!--Question-->
         <div class="question-area">
+            <div>
             <span id="operand1">0</span>
             <span id="operator">x</span>
             <span id="operand2">0</span>
             <span>=</span>
+            </div>
+            <div>
             <p class="answer-message">Enter Answer:</p>
+            </div>
+            <div>
             <input type="number" name="answer-box" id="answer-box">
+            </div>
         </div>
-        <button class="btn btn-grey">Submit Answer</button>
+        <div class="submit-area">
+        <button data-type="submit" class="btn btn-grey">Submit Answer</button>
+        </div>
     </div>
 <!--Score Area-->
     <div class="scrore-area">
