@@ -44,10 +44,9 @@ function runGame(gameType) {
         displayMultiplyQuestion(num1, num2);
     } else if (gameType === "subtract") {
         displaySubtractionQuestion(num1, num2);
-    } else {
-        alert("you did a bad");
-        throw("where's the rest of the code");
-    }
+    } else if (gameType === "division") {
+        displayDivisionQuestion(num1, num2);
+    } 
 }
 
 /**
@@ -65,7 +64,7 @@ function checkAnswer() {
         incrementScore();
     } else {
         alert(`Oooof you answered ${userAnswer}, but the correct answer was ${calculatedAnswer[0]}`);
-        incrementWrong()
+        incrementWrong();
     }
 
     runGame(calculatedAnswer[1]);
@@ -88,9 +87,8 @@ function calculateCorrectAnswer() {
         return [operand1 * operand2, "multiply"];
     } else if (operator === "-") {
         return [operand1 - operand2, "subtract"]
-    }   else {
-        alert(`Unimplemented thing ${operator}`);
-        throw `Unimplemented thing ${operator}. Aborting!`;
+    }   else if (operator === "/") {
+        return [operand1 / operand2, "division"]
     }
 }
 
@@ -128,6 +126,8 @@ function displayMultiplyQuestion(operand1, operand2) {
     document.getElementById("operator").innerText = "x";
 }
 
-function displayDivisionQuestion() {
-    
+function displayDivisionQuestion(operand1, operand2) {
+    document.getElementById("operand1").textContent = operand1 * operand2;
+    document.getElementById("operand2").textContent = operand2;
+    document.getElementById("operator").innerText = "/";
 }
