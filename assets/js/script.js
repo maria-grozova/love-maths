@@ -32,6 +32,8 @@ function runGame(gameType) {
         displayAdditionQuestion(num1, num2);
     } else if (gameType === "multiply") {
         displayMultiplyQuestion(num1, num2);
+    } else if (gameType === "subtract") {
+        displaySubtractionQuestion(num1, num2);
     } else {
         alert("you did a bad");
         throw("where's the rest of the code");
@@ -73,8 +75,10 @@ function calculateCorrectAnswer() {
     if (operator === "+") {
         return [operand1 + operand2, "addition"];
     } else if (operator === "x") {
-        return [operand1 * operand2, "multiply"]
-    } else {
+        return [operand1 * operand2, "multiply"];
+    } else if (operator === "-") {
+        return [operand1 - operand2, "subtract"]
+    }   else {
         alert(`Unimplemented thing ${operator}`);
         throw `Unimplemented thing ${operator}. Aborting!`;
     }
@@ -102,8 +106,10 @@ function displayAdditionQuestion(operand1, operand2) {
     document.getElementById("operator").innerText = "+";
 }
 
-function displaySubtractionQuestion() {
-
+function displaySubtractionQuestion(operand1, operand2) {
+    document.getElementById("operand1").textContent = operand1 >= operand2 ? operand1 : operand2;
+    document.getElementById("operand2").textContent = operand1 > operand2 ? operand2 : operand1;
+    document.getElementById("operator").innerText = "-";
 }
 
 function displayMultiplyQuestion(operand1, operand2) {
